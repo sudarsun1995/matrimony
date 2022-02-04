@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { debounceTime } from 'rxjs/operators';
 import { NbMenuItem, NbToastrService } from '@nebular/theme';
+import {profileData} from '../shared/model'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  user: any = [];
+  user:  profileData[] = [];
   i = 0;
   isLoading= false;
 
