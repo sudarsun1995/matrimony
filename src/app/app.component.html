@@ -1,0 +1,189 @@
+<nb-layout>
+  <nb-layout-column>
+    <div class="row">
+      <div class="col-12 col-xxl-3 col-md-6 mx-auto">
+        <nb-card
+          class="card-row"
+          size="giant"
+          [nbSpinner]="isLoading"
+          nbSpinnerStatus="basic"
+        >
+          <nb-card-header>
+            <div class="row footer">
+              <div class="col-1">
+                <img src="/assets/Image/Header/Filter.png" alt="" />
+              </div>
+              <div class="col text-center">
+                <p>
+                  <img src="/assets/Image/Header/heart.png" alt="" /> Muslim
+                  Match
+                </p>
+              </div>
+              <div class="col-1">
+                <i class="bi bi-three-dots-vertical"></i>
+              </div>
+            </div>
+          </nb-card-header>
+
+          <nb-card-body class="pt-0 mx-5">
+            <div class="card justify-content-md-center">
+              <div>
+                <img [src]="user[i]?.imageUrl" alt="" />
+              </div>
+            </div>
+            <div class="staticIcon mx-auto d-flex justify-content-center">
+              <!-- <div class="d-flex justify-content-center"> -->
+              <div class="me-5">
+                <button
+                  nbButton
+                  size="large"
+                  status="basic"
+                  (click)="showNotIntrest()"
+                >
+                  <nb-icon icon="close-outline"></nb-icon>
+                </button>
+              </div>
+              <div class="">
+                <button nbButton status="warning">
+                  <!-- <img
+                    src="/assets/Image/Chat.png"
+                    alt=""
+                    style="background-color: white"
+                  /> -->
+                  <nb-icon icon="message-circle-outline"></nb-icon>
+                </button>
+                <nb-action
+                  id="badge"
+                  badgeText="1"
+                  badgeStatus="danger"
+                  class="position"
+                >
+                </nb-action>
+              </div>
+              <div class="ms-5">
+                <button nbButton status="danger" (click)="showIntrest()">
+                  <nb-icon icon="heart-outline"></nb-icon>
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <div class="mt-5 pb-2">
+                <div>
+                  <h2>
+                    {{ user[i]?.name }} {{ user[i]?.age }}
+                    <img
+                      class="green"
+                      src="/assets/Image/Body/green.png"
+                      alt=""
+                    />
+                  </h2>
+                  <h3></h3>
+                  <span class="greencircle"></span>
+                </div>
+                <div class="mt-3">
+                  <span>{{ user[i]?.community + "," }}</span>
+                  <span>{{ user[i]?.height + "," }}</span>
+                  <span>{{ user[i]?.address }}</span>
+                </div>
+                <div class="mt-3">
+                  <span>{{ user[i]?.work + "," }}</span>
+                  <span>{{ user[i]?.degree + "," }}</span>
+                  <span>{{ user[i]?.country + "," }}</span>
+                  <span>{{ user[i]?.continent }}</span>
+                </div>
+              </div>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="Wishes">
+                <div class="row">
+                  <div class="col-2">
+                    <img src="/assets/Image/temple.png" alt="" />
+                  </div>
+                  <div class="col-10">
+                    <p>{{ user[i]?.religion }}</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-2">
+                    <img src="/assets/Image/ring.png" alt="" />
+                  </div>
+                  <div class="col-10">
+                    <p>{{ user[i]?.marriageDetails }}</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-2">
+                    <img src="/assets/Image/flight.png" alt="" />
+                  </div>
+                  <div class="col-10">
+                    <p>{{ user[i]?.willingToAbroad }}</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-2">
+                    <img src="/assets/Image/glass.png" alt="" />
+                  </div>
+                  <div class="col-10">
+                    <p>{{ user[i]?.consumeDrugs }}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="about">
+                <h3>About me</h3>
+                <p>{{ user[i]?.about }}</p>
+              </div>
+            </div>
+            <div></div>
+          </nb-card-body>
+
+          <nb-card-footer class="mx-5 px-0 footer footerhide">
+            <div class="d-flex justify-content-around">
+              <div class="justify-content-around">
+                <img src="/assets/Image/footer/home.png" class="ms-2" alt="" />
+                <p>Home</p>
+              </div>
+              <div class="justify-content-around">
+                <img src="/assets/Image/footer/chat.png" class="ms-2" alt="" />
+                <p>Chat</p>
+              </div>
+              <div class="justify-content-around">
+                <img
+                  src="/assets/Image/footer/intrest.png"
+                  class="ms-2"
+                  alt=""
+                />
+                <nb-action
+                  class="position_interest"
+                  badgeText="3"
+                  badgeStatus="danger"
+                >
+                </nb-action>
+
+                <p>Interest</p>
+              </div>
+              <div class="justify-content-around">
+                <img
+                  src="/assets/Image/footer/mutual.png"
+                  class="ms-2"
+                  alt=""
+                />
+                <p>Mutual</p>
+              </div>
+              <div class="justify-content-around">
+                <img src="/assets/Image/footer/menu.png" class="ms-2" alt="" />
+                <p>Menu</p>
+              </div>
+            </div>
+          </nb-card-footer>
+        </nb-card>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+</nb-layout>
